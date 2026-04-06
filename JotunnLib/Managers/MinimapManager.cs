@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -577,8 +577,8 @@ namespace Jotunn.Managers
             Logger.LogDebug("Setting up MapOverlays");
 
             // Create intermediate textures to draw on
-            OverlayTex = new Texture2D(TextureSize, TextureSize, TextureFormat.RGBA32, mipChain: false);
-            FogFilter ??= new Texture2D(TextureSize, TextureSize, TextureFormat.RGBA32, mipChain: false);
+            OverlayTex = new Texture2D(TextureSize, TextureSize, TransparentTex.format, mipChain: false);
+            FogFilter ??= new Texture2D(TextureSize, TextureSize, TransparentTex.format, mipChain: false);
 
             var bundle = AssetUtils.LoadAssetBundleFromResources("minimapmanager", typeof(MinimapManager).Assembly);
 
